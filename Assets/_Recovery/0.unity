@@ -253,9 +253,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallController
   rb: {fileID: 194264089}
   gm: {fileID: 871683306}
-  ballSpeed: 3
+  ballSpeed: 4
   maxInitialAngle: 0.67
-  startY: 2
+  startY: 4
 --- !u!58 &194264094
 CircleCollider2D:
   m_ObjectHideFlags: 0

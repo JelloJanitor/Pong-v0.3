@@ -54,14 +54,16 @@ public class BallController : MonoBehaviour
         // rigidbody.linearVelocity(x,y)
     }
 
+    // Detects collision with score zones and updates score
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gm.SetScore(collision.tag);
+        gm.SetScore(collision.tag); // Passes score zone tag
 
         ResetBall();
         Invoke("Serve", 2);
     }
 
+    // Resets ball for serve
     private void ResetBall()
     {
         Vector2 direction = Vector2.zero;
