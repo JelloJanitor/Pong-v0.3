@@ -2,27 +2,35 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public ScoreTextController textLeft, textRight;
-    int scoreLeft = 0, scoreRight = 0;
+    ///public ScoreTextController textLeft, textRight;
+    int scoreOfPlayer1 = 0, scoreOfPlayer2 = 0;
+    public GameUIController gameUI;
+    int winScore = 4;
 
     // Function that updates a score when player scores
     public void SetScore(string tag)
     {
         // Update right score when left zone entered
         if (tag == "LeftZone")
-        {
-            textRight.SetScore(++scoreRight);
-            Debug.Log("Ball entered the left score zone!");
-        }
+            scoreOfPlayer2++;
         // Update right score when left zone entered
         else if (tag == "RightZone")
+            scoreOfPlayer1++;
+
+        gameUI.UpdateScoreBoard(scoreOfPlayer1, scoreOfPlayer2);
+    }
+
+    public bool CheckWin()
+    {
+        int winnerId = scoreOfPlayer2 == winScore ? 1 : scoreOfPlayer2 == winScore ? 2 : 0;
+
+        if (winnerId != 0)
         {
-            textLeft.SetScore(++scoreLeft);
-            Debug.Log("Ball entered the right score zone!");
+            gameUI.OnWin(winnerId);
+
+            return true;
         }
-        else
-        {
-            Debug.Log("You dun goofed something up. Way to go genius.");
-        }
+
+        return false;
     }
 }

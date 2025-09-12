@@ -33,7 +33,7 @@ public class BallController : MonoBehaviour
 
     // Serve is called to start a volley
     // Sends the ball in a random direction after a brief delay
-    private void Serve()
+    public void Serve()
     {
         // Find the rigidbody component
         //rb = GetComponent<Rigidbody2D>();
@@ -57,10 +57,14 @@ public class BallController : MonoBehaviour
     // Detects collision with score zones and updates score
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gm.SetScore(collision.tag); // Passes score zone tag
+        if (collision != null)
+            gm.SetScore(collision.tag); // Passes score zone tag
 
-        ResetBall();
-        Invoke("Serve", 2);
+        if (!gm.CheckWin())
+        {
+            ResetBall();
+            Invoke("Serve", 2);
+        }
     }
 
     // Resets ball for serve
