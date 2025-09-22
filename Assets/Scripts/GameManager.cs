@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public BallController ball;
     int winScore = 4;
 
+    // Used when the player starts a new game
     public void StartGame()
     {
         scoreOfPlayer1 = 0;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (winnerId != 0)
         {
             gameUI.OnWin(winnerId);
+            ball.ResetBall();
 
             return true;
         }

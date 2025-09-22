@@ -254,7 +254,7 @@ MonoBehaviour:
   rb: {fileID: 194264089}
   gm: {fileID: 871683306}
   ballSpeed: 800
-  maxInitialAngle: 0.67
+  maxInitialAngle: 0.5
   startY: 2
 --- !u!58 &194264094
 CircleCollider2D:
