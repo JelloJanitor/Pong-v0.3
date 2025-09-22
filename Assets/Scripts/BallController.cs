@@ -11,34 +11,11 @@ public class BallController : MonoBehaviour
     private float startX = 0f;
     public float startY = 4f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //void Start()
-    //{
-    //    Invoke("Serve", 3);
-    //}
-
-    // Update is called once per frame
-    void Update()
-    {
-        ////
-        //if (Mouse.current.leftButton.isPressed)
-        //{
-        //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-
-        //    Vector2 currentPosition = transform.position;
-
-        //    currentPosition.x = mousePosition
-        //}
-    }
-
     // Serve is called to start a volley
     // Sends the ball in a random direction after a brief delay
     public void Serve()
     {
-        // Find the rigidbody component
-        //rb = GetComponent<Rigidbody2D>();
-
-        //
+        // Direction vector for ball randomized between left and right serve
         Vector2 direction = Vector2.left;
 
         // Generate random (x, y) vector2
@@ -57,9 +34,11 @@ public class BallController : MonoBehaviour
     // Detects collision with score zones and updates score
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Detects collision
         if (collision != null)
             gm.SetScore(collision.tag); // Passes score zone tag
 
+        // If the win condition is not met, serves again
         if (!gm.CheckWin())
         {
             ResetBall();
