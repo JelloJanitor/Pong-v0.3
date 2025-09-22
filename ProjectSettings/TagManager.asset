@@ -43,5 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ball
+    uniqueID: 579479041
+    locked: 0
+  - name: UI
+    uniqueID: 1046142201
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -660,8 +660,8 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: 0c72fa5f-4abb-4bb5-8dc0-21084cc8cd5f
+  m_DefaultControlScheme: Keyboard & Mouse
+  m_DefaultActionMap: Mouse
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
 --- !u!1 &619394800
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000f9dc5a3e01268a22
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1050,7 +1050,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1046142201
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &889712441
@@ -1889,10 +1889,10 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Keyboard & Mouse
   m_DefaultActionMap: Paddle2
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!1 &1746223608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2017986772013306117, guid: a932bd0ca7ea4604f9a3ea02f599aa14, type: 3}
@@ -1950,10 +1950,10 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Keyboard & Mouse
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!1001 &1993077475
 PrefabInstance:
   m_ObjectHideFlags: 0

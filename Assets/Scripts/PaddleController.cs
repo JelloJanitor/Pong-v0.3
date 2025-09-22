@@ -12,41 +12,21 @@ public class PaddleController : MonoBehaviour
 
     public InputActionReference move;
 
+    // Enable input actions
     private void OnEnable()
     {
         move.action.Enable();
     }
 
+    // Get user input
     private void Update()
     {
         moveDirection = move.action.ReadValue<Vector2>();
     }
 
+    // Move paddle
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(0, moveDirection.y * moveSpeed);
     }
-
-    /*void Update()
-    {
-        float axisValue = GetAxisValue();
-        MovePaddle(axisValue);
-    }
-
-    private void MovePaddle(float axisValue)
-    {
-        Vector2 velocity = rb.linearVelocity;
-        velocity.y = axisValue * moveSpeed;
-        rb.linearVelocity = velocity;
-    }
-
-    private float GetAxisValue()
-    {
-        float axisValue = 0f;
-
-        if (playerId == 1) axisValue = Input.GetAxis("PaddlePlayer1");
-        else if (playerId == 2) axisValue = Input.GetAxis("PaddlePlayer2");
-
-        return axisValue;
-    }*/
 }

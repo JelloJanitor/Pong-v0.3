@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
         gameUI.UpdateScoreBoard(scoreOfPlayer1, scoreOfPlayer2);
     }
 
+    // Checks if either player 1 or 2 has reached a winning score
     public bool CheckWin()
     {
         int winnerId = scoreOfPlayer1 == winScore ? 1 : scoreOfPlayer2 == winScore ? 2 : 0;
 
+        // If a win condition was met enter the menu
         if (winnerId != 0)
         {
             gameUI.OnWin(winnerId);
