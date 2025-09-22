@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public bool CheckWin()
     {
-        int winnerId = scoreOfPlayer2 == winScore ? 1 : scoreOfPlayer2 == winScore ? 2 : 0;
+        int winnerId = scoreOfPlayer1 == winScore ? 1 : scoreOfPlayer2 == winScore ? 2 : 0;
 
         if (winnerId != 0)
         {

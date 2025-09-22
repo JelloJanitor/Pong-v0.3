@@ -6,16 +6,16 @@ public class BallController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public GameManager gm;
-    public float ballSpeed = 4f;
+    public float ballSpeed = 1200f;
     public float maxInitialAngle = 0.67f;
     private float startX = 0f;
     public float startY = 4f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Invoke("Serve", 3);
-    }
+    //void Start()
+    //{
+    //    Invoke("Serve", 3);
+    //}
 
     // Update is called once per frame
     void Update()
