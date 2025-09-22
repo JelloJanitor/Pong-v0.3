@@ -47,7 +47,7 @@ public class BallController : MonoBehaviour
     }
 
     // Resets ball for serve
-    private void ResetBall()
+    public void ResetBall()
     {
         Vector2 direction = Vector2.zero;
         direction.y = Random.Range(-startY, startY);

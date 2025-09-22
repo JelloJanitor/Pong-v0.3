@@ -533,7 +533,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680474684}
-  m_Father: {fileID: 889712441}
+  m_Father: {fileID: 1104370378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameUI: {fileID: 889712442}
+  ball: {fileID: 194264093}
 --- !u!1001 &877216370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1068,7 +1069,6 @@ RectTransform:
   - {fileID: 987995500}
   - {fileID: 1336343110}
   - {fileID: 1104370378}
-  - {fileID: 576928064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1088,11 +1088,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b6cfc7446ad89458a832f85834f384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameUIController
+  gameManager: {fileID: 871683306}
   scoreTextPlayer1: {fileID: 987995501}
   scoreTextPlayer2: {fileID: 1336343111}
   gameMenu: {fileID: 1104370377}
   startButtonText: {fileID: 1680474685}
-  ball: {fileID: 194264093}
   winText: {fileID: 1499060641}
 --- !u!114 &987995498 stripped
 MonoBehaviour:
@@ -1156,6 +1156,7 @@ RectTransform:
   m_Children:
   - {fileID: 1382959493}
   - {fileID: 1499060640}
+  - {fileID: 576928064}
   m_Father: {fileID: 889712441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

@@ -5,8 +5,18 @@ public class GameManager : MonoBehaviour
     ///public ScoreTextController textLeft, textRight;
     int scoreOfPlayer1 = 0, scoreOfPlayer2 = 0;
     public GameUIController gameUI;
+    public BallController ball;
     int winScore = 4;
 
+    public void StartGame()
+    {
+        scoreOfPlayer1 = 0;
+        scoreOfPlayer2 = 0;
+        gameUI.UpdateScoreBoard(scoreOfPlayer1, scoreOfPlayer2);
+        ball.ResetBall();
+        ball.Invoke("Serve", 3);
+    }
+    
     // Function that updates a score when player scores
     public void SetScore(string tag)
     {
