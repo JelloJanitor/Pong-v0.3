@@ -5,11 +5,22 @@ using UnityEngine.InputSystem;
 public class BallController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameManager gm;
+    //public GameManager gm;
     public float ballSpeed = 1200f;
     public float maxInitialAngle = 0.67f;
     private float startX = 0f;
     public float startY = 4f;
+
+    public void OnEnable()
+    {
+        GameManager.Instance.OnScore += Reset;
+    }
+
+    public void Reset(int playerScore1, int playerScore2)
+    {
+        ResetBall();
+        Invoke("Serve", 2);
+    }
 
     // Serve is called to start a volley
     // Sends the ball in a random direction after a brief delay
