@@ -1,22 +1,21 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class BallController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    //public GameManager gm;
     public float ballSpeed = 1200f;
     public float maxInitialAngle = 0.67f;
     private float startX = 0f;
     public float startY = 4f;
 
+    // Subscribe to GameManager
     public void OnEnable()
     {
-        GameManager.Instance.OnScore += Reset;
+        GameManager.Instance.OnGameStart += Reset;
     }
 
-    public void Reset(int playerScore1, int playerScore2)
+    // Reset the ball
+    public void Reset()
     {
         ResetBall();
         Invoke("Serve", 2);
@@ -36,10 +35,7 @@ public class BallController : MonoBehaviour
         }
         direction.y = Random.Range(-maxInitialAngle, maxInitialAngle);
 
-        //rb.AddForce(direction);
         rb.linearVelocity = direction * ballSpeed;
-
-        // rigidbody.linearVelocity(x,y)
     }
 
     // Detects collision with score zones and updates score
@@ -47,10 +43,10 @@ public class BallController : MonoBehaviour
     {
         // Detects collision
         if (collision != null)
-            gm.SetScore(collision.tag); // Passes score zone tag
+            GameManager.Instance.UpdateScore(collision.tag); // Passes score zone tag
 
         // If the win condition is not met, serves again
-        if (!gm.CheckWin())
+        if (!GameManager.Instance.CheckWin())
         {
             ResetBall();
             Invoke("Serve", 2);

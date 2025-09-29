@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallController
   rb: {fileID: 194264089}
-  gm: {fileID: 871683306}
   ballSpeed: 800
   maxInitialAngle: 0.5
   startY: 2
@@ -858,8 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5b6652312c582419fef6e3d281bc03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  gameUI: {fileID: 889712442}
-  ball: {fileID: 194264093}
+  winScore: 4
 --- !u!1001 &877216370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,9 +1087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameUIController
   gameManager: {fileID: 871683306}
+  gameMenu: {fileID: 1104370377}
   scoreTextPlayer1: {fileID: 987995501}
   scoreTextPlayer2: {fileID: 1336343111}
-  gameMenu: {fileID: 1104370377}
   startButtonText: {fileID: 1680474685}
   winText: {fileID: 1499060641}
 --- !u!114 &987995498 stripped
@@ -1923,6 +1921,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaddleController
   rb: {fileID: 1746223612}
   playerId: 1
+  paddleInitialY: 0
+  paddleInitialX: 8.5
   moveSpeed: 700
   move: {fileID: -6041809550473085777, guid: f32e4f0c2b311ba4cb99088c2faecea0, type: 3}
 --- !u!114 &1746223614
@@ -2164,6 +2164,10 @@ PrefabInstance:
       propertyPath: move
       value: 
       objectReference: {fileID: -6041809550473085777, guid: f32e4f0c2b311ba4cb99088c2faecea0, type: 3}
+    - target: {fileID: -403720221393024265, guid: a932bd0ca7ea4604f9a3ea02f599aa14, type: 3}
+      propertyPath: paddleInitialX
+      value: -8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2017986772013306117, guid: a932bd0ca7ea4604f9a3ea02f599aa14, type: 3}
       propertyPath: m_Name
       value: PaddlePlayer1

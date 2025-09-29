@@ -6,16 +6,30 @@ public class PaddleController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int playerId;
+    //public float paddleInitialY = 0;
+    //public float paddleInitialX = 8.5f;
     public float moveSpeed = 700f;
-
     private Vector2 moveDirection;
 
     public InputActionReference move;
 
-    // Enable input actions
+    // Subscribe to GameManager
     private void OnEnable()
     {
+        GameManager.Instance.OnGameStart += EnableInput;
+        GameManager.Instance.OnGameOver += ResetPaddles;
+    }
+
+    // Enable paddle input
+    private void EnableInput()
+    {
         move.action.Enable();
+    }
+    
+    // Disable paddle input
+    private void ResetPaddles(int _winnerId)
+    {
+        move.action.Disable();
     }
 
     // Get user input
