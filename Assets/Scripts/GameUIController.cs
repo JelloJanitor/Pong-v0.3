@@ -11,6 +11,7 @@ public class GameUIController : MonoBehaviour
     public ScoreTextController scoreTextPlayer1, scoreTextPlayer2;
     public TextMeshProUGUI startButtonText;
     public TextMeshProUGUI winText;
+    public TextMeshProUGUI playModeText;
 
     // Subscribe to GameManager
     public void OnEnable()
@@ -41,5 +42,20 @@ public class GameUIController : MonoBehaviour
         gameMenu.SetActive(true);
         startButtonText.text = $"Play Again";
         winText.text = $"Player {winnerId} wins!";
+    }
+
+    public void OnPlayModeButtonClicked()
+    {
+        switch (GameManager.Instance.playMode)
+        {
+            case GameManager.PlayMode.PlayerVsPlayer:
+                GameManager.Instance.playMode = GameManager.PlayMode.PlayerVsCPU;
+                playModeText.text = "Player Vs. CPU";
+                break;
+            case GameManager.PlayMode.PlayerVsCPU:
+                GameManager.Instance.playMode = GameManager.PlayMode.PlayerVsPlayer;
+                playModeText.text = "Player Vs. Player";
+                break;
+        }
     }
 }

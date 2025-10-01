@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,13 @@ public class GameManager : MonoBehaviour
 
     int scoreOfPlayer1 = 0, scoreOfPlayer2 = 0;
     public int winScore = 4;
+    public PlayMode playMode;
+
+    public enum PlayMode
+    {
+        PlayerVsPlayer,
+        PlayerVsCPU
+    }
 
     // Used when the player starts a new game
     public void StartGame()
