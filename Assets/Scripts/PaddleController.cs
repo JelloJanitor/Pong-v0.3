@@ -44,11 +44,11 @@ public class PaddleController : MonoBehaviour
         if (playerId == 2 && GameManager.Instance.playMode == GameManager.PlayMode.PlayerVsCPU)
         {
             //MoveCPU();
-            if (transform.position.y - ball.transform.position.y > 20)
+            if (transform.position.y - ball.transform.position.y < 200)
             {
                 moveDirection = new Vector2(0.0f, 1.0f);
             }
-            else if (transform.position.y - ball.transform.position.y < -20)
+            else if (transform.position.y - ball.transform.position.y > -200)
             {
                 moveDirection = new Vector2(0.0f, -1.0f);
             }
